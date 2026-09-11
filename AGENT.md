@@ -4,7 +4,7 @@ Hướng dẫn cho agent (và người) implement StayBill. Đọc file này **t
 
 ## Mục tiêu
 
-Xây một ASP.NET Core 8 Web API **cơ bản**, đủ để demo và nói trong phỏng vấn — khớp 4 ý trên CV:
+Xây một ASP.NET Core 8 Web API **cơ bản** với bốn phần:
 
 1. REST: phòng (trống / đã thuê), khách thuê, hợp đồng
 2. Hóa đơn tháng: tiền phòng + điện/nước; đã thu / chưa thu

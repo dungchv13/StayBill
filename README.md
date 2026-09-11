@@ -15,7 +15,7 @@ Dự án cá nhân học **ASP.NET Core** — backend Web API, không có fronte
 | Auth | JWT |
 | Chạy local | Docker Compose |
 
-## Phạm vi (đúng CV)
+## Phạm vi
 
 - REST API: phòng (trống / đã thuê), khách thuê, hợp đồng thuê
 - Hóa đơn tháng: tiền phòng + điện/nước; trạng thái đã thu / chưa thu
