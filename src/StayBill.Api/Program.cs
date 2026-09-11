@@ -91,6 +91,11 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
+if (app.Environment.IsDevelopment())
+{
+    await DevSeed.EnsureAsync(app.Services);
+}
+
 app.Run();
 
 public partial class Program;

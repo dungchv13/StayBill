@@ -39,24 +39,29 @@ Chi tiết: [docs/architecture.md](docs/architecture.md).
 
 ## Chạy local
 
-Yêu cầu: .NET 8 SDK, Docker.
+Yêu cầu: .NET 8 SDK, Docker, `dotnet-ef` (`dotnet tool install --global dotnet-ef --version 8.0.11`).
 
 ```bash
 copy .env.example .env
 docker compose up -d
-dotnet run --project src/StayBill.Api --launch-profile http
-```
-
-Sau khi có migration (phase 1+), thêm:
-
-```bash
 dotnet ef database update --project src/StayBill.Api
+dotnet run --project src/StayBill.Api --launch-profile http
 ```
 
 - Health: `http://localhost:5080/health`
 - Swagger: `http://localhost:5080/swagger`
-- PostgreSQL: `127.0.0.1:15432` (tránh lệch cổng 5432/5433 trên máy local)
+- PostgreSQL: `127.0.0.1:15432`
 - Redis: `localhost:16379`
+
+Development seed (chỉ khi DB trống):
+
+- User: `admin@staybill.local` / `Admin123!`
+- Phòng `P101`, `P102`
+- Khách `Tran Thi B`
+
+```bash
+dotnet test StayBill.sln
+```
 
 Không commit `.env`.
 

@@ -59,9 +59,9 @@ public sealed class ContractService
             throw AppException.NotFound("TENANT_NOT_FOUND", "Tenant was not found.");
         }
 
-        var occupied = room.Status == RoomStatus.Occupied
-                       || await _db.Contracts.AnyAsync(
-                           x => x.RoomId == room.Id && x.Status == ContractStatus.Active, ct);
+        var occupied = !OccupancyRules.CanCreateActiveContract(
+            room.Status,
+            await _db.Contracts.AnyAsync(x => x.RoomId == room.Id && x.Status == ContractStatus.Active, ct));
         if (occupied)
         {
             throw AppException.Conflict("ROOM_OCCUPIED", "Room already has an active contract.");

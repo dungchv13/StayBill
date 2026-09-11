@@ -76,12 +76,12 @@ Commit gợi ý: `feat: monthly invoices with pay flow`
 
 ## Phase 7 — Tests + polish
 
-- [ ] Unit: occupancy rule (thuê phòng Occupied → fail)
-- [ ] Unit: công thức `Total`
-- [ ] Integration (optional): login + create room + vacant cache
-- [ ] Seed Development: 1 user `admin@staybill.local` / `Admin123!`, 2 phòng, 1 khách (không seed production)
-- [ ] Rà `docs/api.md` vs controller thật
-- [ ] README “Chạy local” cuối cùng
+- [x] Unit: occupancy rule (thuê phòng Occupied → fail)
+- [x] Unit: công thức `Total`
+- [ ] Integration (optional): login + create room + vacant cache — skipped; unit tests cover occupancy and invoice total
+- [x] Seed Development: 1 user `admin@staybill.local` / `Admin123!`, 2 phòng, 1 khách (không seed production)
+- [x] Rà `docs/api.md` vs controller thật
+- [x] README “Chạy local” cuối cùng
 
 Commit gợi ý: `test: occupancy and invoice total; add dev seed`
 
