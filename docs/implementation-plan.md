@@ -29,11 +29,11 @@ Commit gợi ý: `feat: add domain entities and EF Core initial migration`
 
 ## Phase 2 — JWT auth
 
-- [ ] `POST /api/auth/register` — hash password (ASP.NET Identity hasher hoặc BCrypt)
-- [ ] `POST /api/auth/login` — trả `{ accessToken, expiresAt }`
-- [ ] `[Authorize]` default cho controller nghiệp vụ
-- [ ] Allow anonymous: register, login, health, swagger
-- [ ] 401 khi thiếu/sai token
+- [x] `POST /api/auth/register` — hash password (ASP.NET Identity hasher hoặc BCrypt)
+- [x] `POST /api/auth/login` — trả `{ accessToken, expiresAt }`
+- [x] `[Authorize]` default cho controller nghiệp vụ
+- [x] Allow anonymous: register, login, health, swagger
+- [x] 401 khi thiếu/sai token
 
 Commit gợi ý: `feat: add JWT register and login`
 
