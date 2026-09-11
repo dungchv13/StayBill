@@ -19,11 +19,11 @@ Commit gợi ý: `chore: scaffold API, tests, and docker compose`
 
 ## Phase 1 — Domain + EF Core
 
-- [ ] Entity: `User`, `Room`, `Tenant`, `Contract`, `Invoice` đúng `docs/domain.md`
-- [ ] Enum: `RoomStatus`, `ContractStatus`, `InvoiceStatus`
-- [ ] `StayBillDbContext` + Fluent API (index unique `Room.Code`, FK, precision decimal)
-- [ ] `dotnet ef migrations add Init`
-- [ ] `dotnet ef database update` chạy được với Compose
+- [x] Entity: `User`, `Room`, `Tenant`, `Contract`, `Invoice` đúng `docs/domain.md`
+- [x] Enum: `RoomStatus`, `ContractStatus`, `InvoiceStatus`
+- [x] `StayBillDbContext` + Fluent API (index unique `Room.Code`, FK, precision decimal)
+- [x] `dotnet ef migrations add Init`
+- [x] `dotnet ef database update` chạy được với Compose
 
 Commit gợi ý: `feat: add domain entities and EF Core initial migration`
 

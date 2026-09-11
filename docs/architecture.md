@@ -54,15 +54,15 @@ Hai service, không build API trong Compose ở MVP (chạy API bằng `dotnet r
 
 | Service | Image | Port host |
 |---|---|---|
-| `postgres` | `postgres:16-alpine` | 5433 → 5432 |
-| `redis` | `redis:7-alpine` | 6380 → 6379 |
+| `postgres` | `postgres:16-alpine` | 15432 → 5432 |
+| `redis` | `redis:7-alpine` | 16379 → 6379 |
 
 DB: `staybill` / user `staybill` / password từ env.
 
 API đọc:
 
 - `ConnectionStrings:Default` — Npgsql
-- `ConnectionStrings:Redis` — `localhost:6380`
+- `ConnectionStrings:Redis` — `localhost:16379`
 - `Jwt:Key` (≥ 32 chars), `Jwt:Issuer`, `Jwt:Audience`, `Jwt:ExpiresMinutes` (mặc định 480)
 
 ## EF Core

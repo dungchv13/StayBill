@@ -55,8 +55,8 @@ dotnet ef database update --project src/StayBill.Api
 
 - Health: `http://localhost:5080/health`
 - Swagger: `http://localhost:5080/swagger`
-- PostgreSQL: `localhost:5433` (container 5432; host 5433 để tránh lệch cổng máy local)
-- Redis: `localhost:6380`
+- PostgreSQL: `127.0.0.1:15432` (tránh lệch cổng 5432/5433 trên máy local)
+- Redis: `localhost:16379`
 
 Không commit `.env`.
 
