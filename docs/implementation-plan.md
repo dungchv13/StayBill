@@ -66,11 +66,11 @@ Commit gợi ý: `feat: contracts with room occupancy rules`
 
 ## Phase 6 — Invoices
 
-- [ ] `POST /api/invoices` — gắn `ContractId` đang `Active`; period `yyyy-MM` unique theo contract
-- [ ] Tính `Total` server-side (client không gửi total)
-- [ ] `GET /api/invoices`, filter optional `?status=Unpaid`
-- [ ] `POST /api/invoices/{id}/pay` → `Paid`, `PaidAt = UtcNow`
-- [ ] Không pay hai lần (`409`)
+- [x] `POST /api/invoices` — gắn `ContractId` đang `Active`; period `yyyy-MM` unique theo contract
+- [x] Tính `Total` server-side (client không gửi total)
+- [x] `GET /api/invoices`, filter optional `?status=Unpaid`
+- [x] `POST /api/invoices/{id}/pay` → `Paid`, `PaidAt = UtcNow`
+- [x] Không pay hai lần (`409`)
 
 Commit gợi ý: `feat: monthly invoices with pay flow`
 
