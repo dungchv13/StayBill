@@ -39,10 +39,10 @@ Commit gợi ý: `feat: add JWT register and login`
 
 ## Phase 3 — Rooms + Redis cache
 
-- [ ] CRUD `/api/rooms`
-- [ ] `GET /api/rooms/vacant` — chỉ `Vacant`; cache Redis key `rooms:vacant`, TTL 60s
-- [ ] Invalidate cache khi create/update/delete room hoặc đổi status (hợp đồng phase 4 sẽ gọi cùng helper)
-- [ ] `IRoomCache` wrapper, không gọi Redis rải trong controller
+- [x] CRUD `/api/rooms`
+- [x] `GET /api/rooms/vacant` — chỉ `Vacant`; cache Redis key `rooms:vacant`, TTL 60s
+- [x] Invalidate cache khi create/update/delete room hoặc đổi status (hợp đồng phase 4 sẽ gọi cùng helper)
+- [x] `IRoomCache` wrapper, không gọi Redis rải trong controller
 
 Commit gợi ý: `feat: room CRUD with Redis vacant-room cache`
 

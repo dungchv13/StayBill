@@ -4,8 +4,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using StackExchange.Redis;
 using StayBill.Api;
 using StayBill.Api.Auth;
+using StayBill.Api.Cache;
 using StayBill.Api.Data;
 using StayBill.Api.Services;
 
@@ -49,6 +51,11 @@ builder.Services.AddDbContext<StayBillDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
 builder.Services.AddSingleton<JwtTokenFactory>();
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<RoomService>();
+builder.Services.AddSingleton<IConnectionMultiplexer>(_ =>
+    ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Redis")
+                                  ?? throw new InvalidOperationException("Redis connection string is missing.")));
+builder.Services.AddSingleton<IVacantRoomCache, RedisVacantRoomCache>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
