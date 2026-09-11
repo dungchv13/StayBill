@@ -30,8 +30,9 @@ Ngoài phạm vi: GraphQL, Kafka, Kubernetes, UI, thanh toán online, multi-tena
 StayBill/
   src/StayBill.Api/          # Web API
   tests/StayBill.Api.Tests/  # Tests
-  docs/                      # Kiến trúc, domain, API, plan
-  docker-compose.yml         # PostgreSQL + Redis
+  docs/
+  Dockerfile                 # image ASP.NET Core
+  docker-compose.yml         # API + PostgreSQL + Redis
   AGENT.md
 ```
 
@@ -39,12 +40,22 @@ Chi tiết: [docs/architecture.md](docs/architecture.md).
 
 ## Chạy local
 
-Yêu cầu: .NET 8 SDK, Docker, `dotnet-ef` (`dotnet tool install --global dotnet-ef --version 8.0.11`).
+### Docker (API + Postgres + Redis)
 
 ```bash
 copy .env.example .env
-docker compose up -d
-dotnet ef database update --project src/StayBill.Api
+docker compose up --build
+```
+
+API tự migrate schema khi start.
+
+### API trên máy, DB trong Docker
+
+Yêu cầu: .NET 8 SDK.
+
+```bash
+copy .env.example .env
+docker compose up -d postgres redis
 dotnet run --project src/StayBill.Api --launch-profile http
 ```
 

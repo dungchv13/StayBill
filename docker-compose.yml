@@ -26,5 +26,24 @@ services:
       timeout: 3s
       retries: 10
 
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Default: Host=postgres;Port=5432;Database=staybill;Username=staybill;Password=${POSTGRES_PASSWORD:-staybill}
+      ConnectionStrings__Redis: redis:6379,abortConnect=false
+      Jwt__Key: ${Jwt__Key:-staybill-dev-key-change-me-32chars-min}
+      Jwt__Issuer: ${Jwt__Issuer:-StayBill}
+      Jwt__Audience: ${Jwt__Audience:-StayBill}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
 volumes:
   staybill_pg:

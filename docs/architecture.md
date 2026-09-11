@@ -48,14 +48,19 @@ src/StayBill.Api/
   Program.cs
 ```
 
-## Docker Compose
+## Docker
 
-Hai service, không build API trong Compose ở MVP (chạy API bằng `dotnet run`):
+`Dockerfile` (multi-stage: `sdk:8.0` build → `aspnet:8.0` runtime) publish `StayBill.Api`, listen `8080`.
+
+Compose:
 
 | Service | Image | Port host |
 |---|---|---|
+| `api` | build `Dockerfile` | 5080 → 8080 |
 | `postgres` | `postgres:16-alpine` | 15432 → 5432 |
 | `redis` | `redis:7-alpine` | 16379 → 6379 |
+
+Trong Compose, API nối `Host=postgres;Port=5432` và `redis:6379`. Startup gọi `Database.Migrate()`.
 
 DB: `staybill` / user `staybill` / password từ env.
 
