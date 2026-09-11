@@ -48,9 +48,9 @@ Commit gợi ý: `feat: room CRUD with Redis vacant-room cache`
 
 ## Phase 4 — Tenants
 
-- [ ] CRUD `/api/tenants`
-- [ ] Validate phone / CMND không rỗng khi create
-- [ ] 404 khi id không tồn tại
+- [x] CRUD `/api/tenants`
+- [x] Validate phone / CMND không rỗng khi create
+- [x] 404 khi id không tồn tại
 
 Commit gợi ý: `feat: tenant CRUD`
 
