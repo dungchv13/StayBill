@@ -56,11 +56,11 @@ Commit gợi ý: `feat: tenant CRUD`
 
 ## Phase 5 — Contracts + occupancy
 
-- [ ] `POST /api/contracts` — room phải `Vacant` và không có contract `Active` khác → nếu không: `409`
-- [ ] Sau create thành công: room → `Occupied`, invalidate vacant cache
-- [ ] `GET /api/contracts`, `GET /api/contracts/{id}`
-- [ ] `POST /api/contracts/{id}/end` — status `Ended`, `EndedAt = UtcNow`, room → `Vacant`, invalidate cache
-- [ ] Không cho end contract đã `Ended` (`409`)
+- [x] `POST /api/contracts` — room phải `Vacant` và không có contract `Active` khác → nếu không: `409`
+- [x] Sau create thành công: room → `Occupied`, invalidate vacant cache
+- [x] `GET /api/contracts`, `GET /api/contracts/{id}`
+- [x] `POST /api/contracts/{id}/end` — status `Ended`, `EndedAt = UtcNow`, room → `Vacant`, invalidate cache
+- [x] Không cho end contract đã `Ended` (`409`)
 
 Commit gợi ý: `feat: contracts with room occupancy rules`
 

@@ -53,6 +53,7 @@ builder.Services.AddSingleton<JwtTokenFactory>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<RoomService>();
 builder.Services.AddScoped<TenantService>();
+builder.Services.AddScoped<ContractService>();
 builder.Services.AddSingleton<IConnectionMultiplexer>(_ =>
     ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Redis")
                                   ?? throw new InvalidOperationException("Redis connection string is missing.")));
