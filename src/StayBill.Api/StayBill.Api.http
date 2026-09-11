@@ -1,0 +1,4 @@
+@StayBill.Api_HostAddress = http://localhost:5080
+
+GET {{StayBill.Api_HostAddress}}/health
+Accept: application/json

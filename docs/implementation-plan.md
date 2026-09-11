@@ -4,16 +4,16 @@ Làm tuần tự. Đánh `[x]` khi phase xong.
 
 ## Phase 0 — Skeleton
 
-- [ ] `dotnet new sln -n StayBill`
-- [ ] `dotnet new webapi -n StayBill.Api -o src/StayBill.Api --use-controllers`
-- [ ] `dotnet new xunit -n StayBill.Api.Tests -o tests/StayBill.Api.Tests`
-- [ ] Add project to sln; test project reference API
-- [ ] `docker-compose.yml`: Postgres 16 + Redis 7, volume, healthcheck
-- [ ] `.env.example`: `ConnectionStrings__Default`, `ConnectionStrings__Redis`, `Jwt__Key`, `Jwt__Issuer`, `Jwt__Audience`
-- [ ] `appsettings.json` + bind env
-- [ ] Swagger bật ở Development
-- [ ] `GET /health` → 200
-- [ ] Cập nhật README lệnh chạy thật
+- [x] `dotnet new sln -n StayBill`
+- [x] `dotnet new webapi -n StayBill.Api -o src/StayBill.Api --use-controllers`
+- [x] `dotnet new xunit -n StayBill.Api.Tests -o tests/StayBill.Api.Tests`
+- [x] Add project to sln; test project reference API
+- [x] `docker-compose.yml`: Postgres 16 + Redis 7, volume, healthcheck
+- [x] `.env.example`: `ConnectionStrings__Default`, `ConnectionStrings__Redis`, `Jwt__Key`, `Jwt__Issuer`, `Jwt__Audience`
+- [x] `appsettings.json` + bind env
+- [x] Swagger bật ở Development
+- [x] `GET /health` → 200
+- [x] Cập nhật README lệnh chạy thật
 
 Commit gợi ý: `chore: scaffold API, tests, and docker compose`
 

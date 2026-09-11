@@ -24,37 +24,41 @@ Dự án cá nhân học **ASP.NET Core** — backend Web API, không có fronte
 
 Ngoài phạm vi: GraphQL, Kafka, Kubernetes, UI, thanh toán online, multi-tenant SaaS.
 
-## Cấu trúc (sau khi implement)
+## Cấu trúc
 
 ```
 StayBill/
-  src/StayBill.Api/          # Web API: Controllers, Domain, Data, Services, Auth
-  tests/StayBill.Api.Tests/  # Unit / integration tests
+  src/StayBill.Api/          # Web API
+  tests/StayBill.Api.Tests/  # Tests
   docs/                      # Kiến trúc, domain, API, plan
   docker-compose.yml         # PostgreSQL + Redis
-  AGENT.md                   # Hướng dẫn agent khi code
+  AGENT.md
 ```
 
 Chi tiết: [docs/architecture.md](docs/architecture.md).
 
 ## Chạy local
 
-> Chưa scaffold code. Làm theo [docs/implementation-plan.md](docs/implementation-plan.md).
-
-Khi đã có code:
+Yêu cầu: .NET 8 SDK, Docker.
 
 ```bash
+copy .env.example .env
 docker compose up -d
-dotnet ef database update --project src/StayBill.Api
-dotnet run --project src/StayBill.Api
+dotnet run --project src/StayBill.Api --launch-profile http
 ```
 
-- API: `http://localhost:5080`
-- Swagger: `http://localhost:5080/swagger`
-- PostgreSQL: `localhost:5432`
-- Redis: `localhost:6379`
+Sau khi có migration (phase 1+), thêm:
 
-Copy `.env.example` → `.env` trước khi chạy (không commit `.env`).
+```bash
+dotnet ef database update --project src/StayBill.Api
+```
+
+- Health: `http://localhost:5080/health`
+- Swagger: `http://localhost:5080/swagger`
+- PostgreSQL: `localhost:5433` (container 5432; host 5433 để tránh lệch cổng máy local)
+- Redis: `localhost:6380`
+
+Không commit `.env`.
 
 ## Tài liệu
 
